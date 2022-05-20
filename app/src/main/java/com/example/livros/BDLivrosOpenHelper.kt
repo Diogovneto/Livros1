@@ -10,8 +10,11 @@ class BDLivrosOpenHelper(
     factory: SQLiteDatabase.CursorFactory?,
     version: Int
 ) : SQLiteOpenHelper(context, name, factory, version) {
+
     override fun onCreate(db: SQLiteDatabase?) {
-        TODO("Not yet implemented")
+        if(db == null) return
+
+        TabelaBDcategorias(db).cria()
     }
 
     override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) {
