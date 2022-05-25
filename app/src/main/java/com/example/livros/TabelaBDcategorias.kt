@@ -4,7 +4,7 @@ import android.database.sqlite.SQLiteDatabase
 import android.provider.BaseColumns
 
 class TabelaBDcategorias(val db: SQLiteDatabase) {
-    fun cria(db: SQLiteDatabase) {
+    fun cria() {
         db.execSQL("CREATE TABLE $NOME (${BaseColumns._ID} INTEGER PRIMARY KEY AUTOINCREMENT, $CAMPO_NOME TEXT NOT NULL)")
     }
 

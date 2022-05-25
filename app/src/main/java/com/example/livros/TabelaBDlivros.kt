@@ -4,7 +4,7 @@ import android.database.sqlite.SQLiteDatabase
 import android.provider.BaseColumns
 
 class TabelaBDlivros(val db: SQLiteDatabase) {
-    fun cria(db: SQLiteDatabase) {
+    fun cria() {
         db.execSQL("CREATE TABLE $NOME (${BaseColumns._ID} INTEGER PRIMARY KEY AUTOINCREMENT, $CAMPO_TITULO TEXT NOT NULL, $CAMPO_AUTOR TEXT NOT NULL, $CAMPO_CATEGORIA_ID INTEGER NOT NULL, FOREIGN KEY ($CAMPO_CATEGORIA_ID) REFERENCES ${TabelaBDcategorias.NOME}(${BaseColumns._ID}) ON DELETE RESTRICT)")
     }
 
